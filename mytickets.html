@@ -1,0 +1,31 @@
+{%extends "Nav.html"%}{%block title%}Bookings{%endblock%}
+{%block content%}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='mybooking.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='myticket.css') }}">
+</head>
+
+<body>
+  <br>
+  <br>
+  <div class="container1">
+    {%for booking in booked%}
+    <div class="ticket">
+      <div class="ticket-header">
+        <h2>Flight Ticket&nbsp;<i class="fa-solid fa-plane"></i></h2>
+      </div>
+      <div class="ticket-info">
+        <p class="source-destination">From: {{booking.source }}</p>
+        <p class="source-destination">To: {{booking.destination }}</p>
+        <p class="flight-details">Flight ID: {{booking.flight_id}}</p>
+        <p class="flight-details">Airline:{{booking.airline}}</p>
+        <p class="flight-details">Departure: 2018-01-29, {{booking.departure_time}}</p>
+        <p class="flight-details">Arrival: 2018-01-29, {{booking.arrival_time}}</p>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+  <script src="https://kit.fontawesome.com/76f58d0bbc.js" crossorigin="anonymous"></script>
+</body>
+{%endblock%}

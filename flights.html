@@ -1,0 +1,193 @@
+{%extends "Nav.html"%}{%block title%}Flights{%endblock%}
+{%block content%}
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='flight.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+
+
+
+
+        <main class="cd__main">
+
+            <div class="booking-form-w3layouts">
+
+                <form action="/search_flights" method="post">
+                    <h2 class="sub-heading-agileits">Search Flights</h2>
+                    <div class="main-flex-w3ls-sectns">
+                        <div class="field-agileinfo-spc form-w3-agile-text1">
+                            <select class="form-control" name="source_airport">
+                                <option>From</option>
+                                <option value="Frankfurt Airport">Frankfurt Airport</option>
+                                <option value="Berlin Tegel Airport">Berlin Tegel Airport</option>
+                                <option value="London Heathrow Airport">London Heathrow Airport</option>
+                                <option value="Charles de Gaulle Airport">Charles de Gaulle Airport</option>
+                                <option value="John F. Kennedy International Airport">John F. Kennedy International
+                                    Airport</option>
+                                <option value="Los Angeles International Airport">Los Angeles International Airport
+                                </option>
+                                <option value="Tokyo Haneda Airport">Tokyo Haneda Airport</option>
+                                <option value="Dubai International Airport">Dubai International Airport</option>
+                                <option value="Beijing Capital International Airport">Beijing Capital International
+                                    Airport</option>
+                                <option value="Chicago O'Hare International Airport">Chicago O'Hare International
+                                    Airport</option>
+                                <option value="Incheon International Airport">Incheon International Airport</option>
+                                <option value="Singapore Changi Airport">Singapore Changi Airport</option>
+                                <option value="Suvarnabhumi Airport">Suvarnabhumi Airport</option>
+                                <option value="Indira Gandhi International Airport">Indira Gandhi International Airport
+                                </option>
+                                <option value="Toronto Pearson International Airport">Toronto Pearson International
+                                    Airport</option>
+                                <option value="Amsterdam Schiphol Airport">Amsterdam Schiphol Airport</option>
+                                <option value="Munich Airport">Munich Airport</option>
+                                <option value="San Francisco International Airport">San Francisco International Airport
+                                </option>
+                                <option value="Hong Kong International Airport">Hong Kong International Airport</option>
+                                <option value="Abu Dhabi International Airport">Abu Dhabi International Airport</option>
+                                <option value="Dallas/Fort Worth International Airport">Dallas/Fort Worth International
+                                    Airport</option>
+                                <option value="Berlin Brandenburg Airport">Berlin Brandenburg Airport</option>
+                                <option value="Auckland Airport">Auckland Airport</option>
+                                <option value="Adolfo Suárez Madrid–Barajas Airport">Adolfo Suárez Madrid–Barajas
+                                    Airport</option>
+                                <option value="Toulouse–Blagnac Airport">Toulouse–Blagnac Airport</option>
+                                <option value="London Gatwick Airport">London Gatwick Airport</option>
+                                <option value="Leonardo da Vinci–Fiumicino Airport">Leonardo da Vinci–Fiumicino Airport
+                                </option>
+                                <option value="Toronto Pearson International Airport">Toronto Pearson International
+                                    Airport</option>
+                                <option value="Zurich Airport">Zurich Airport</option>
+                                <option value="Hamburg Airport">Hamburg Airport</option>
+                            </select>
+                        </div>
+                        <div class="field-agileinfo-spc form-w3-agile-text2">
+                            <select class="form-control" name="destination_airport">
+                                <option>To</option>
+                                <option value="Frankfurt Airport">Frankfurt Airport</option>
+                                <option value="Berlin Tegel Airport">Berlin Tegel Airport</option>
+                                <option value="London Heathrow Airport">London Heathrow Airport</option>
+                                <option value="Charles de Gaulle Airport">Charles de Gaulle Airport</option>
+                                <option value="John F. Kennedy International Airport">John F. Kennedy International
+                                    Airport</option>
+                                <option value="Los Angeles International Airport">Los Angeles International Airport
+                                </option>
+                                <option value="Tokyo Haneda Airport">Tokyo Haneda Airport</option>
+                                <option value="Dubai International Airport">Dubai International Airport</option>
+                                <option value="Beijing Capital International Airport">Beijing Capital International
+                                    Airport</option>
+                                <option value="Chicago O'Hare International Airport">Chicago O'Hare International
+                                    Airport</option>
+                                <option value="Incheon International Airport">Incheon International Airport</option>
+                                <option value="Singapore Changi Airport">Singapore Changi Airport</option>
+                                <option value="Suvarnabhumi Airport">Suvarnabhumi Airport</option>
+                                <option value="Indira Gandhi International Airport">Indira Gandhi International Airport
+                                </option>
+                                <option value="Toronto Pearson International Airport">Toronto Pearson International
+                                    Airport</option>
+                                <option value="Amsterdam Schiphol Airport">Amsterdam Schiphol Airport</option>
+                                <option value="Munich Airport">Munich Airport</option>
+                                <option value="San Francisco International Airport">San Francisco International Airport
+                                </option>
+                                <option value="Hong Kong International Airport">Hong Kong International Airport</option>
+                                <option value="Abu Dhabi International Airport">Abu Dhabi International Airport</option>
+                                <option value="Dallas/Fort Worth International Airport">Dallas/Fort Worth International
+                                    Airport</option>
+                                <option value="Berlin Brandenburg Airport">Berlin Brandenburg Airport</option>
+                                <option value="Auckland Airport">Auckland Airport</option>
+                                <option value="Adolfo Suárez Madrid–Barajas Airport">Adolfo Suárez Madrid–Barajas
+                                    Airport</option>
+                                <option value="Toulouse–Blagnac Airport">Toulouse–Blagnac Airport</option>
+                                <option value="London Gatwick Airport">London Gatwick Airport</option>
+                                <option value="Leonardo da Vinci–Fiumicino Airport">Leonardo da Vinci–Fiumicino Airport
+                                </option>
+                                <option value="Toronto Pearson International Airport">Toronto Pearson International
+                                    Airport</option>
+                                <option value="Zurich Airport">Zurich Airport</option>
+                                <option value="Hamburg Airport">Hamburg Airport</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contentdate">
+                        <div class="departure">
+                            <label for="ddate">Departure Date</label>
+                            <input type="date" id="ddate" name="ddate" style="margin-right:16%;" placeholder="Date">
+
+                            <label for="adate">Arrival Date</label>
+                            <input type="date" id="adate" name="adate" placeholder="Date">
+
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+                    <input type="submit" value="Submit">
+                    <br><br><br>
+                    <a href="/flights">Reset</a>
+                    <div class="clear"></div>
+                </form>
+
+            </div>
+
+        </main>
+
+        <div class="row g-4 justify-content-center mt-4">
+            {% for flight in flights %}
+            <div class="col-lg-4 col-md-10 wow fadeInUp" data-wow-delay="0.1s">
+
+                <div class="package-item">
+
+                    <div class="overflow-hidden">
+
+                    </div>
+
+
+                    <div class=" p-4">
+
+                        <h5 class="mb-0 ">
+                            {{ flight.source }}<br><i class="fa-solid fa-plane"></i><br>{{flight.destination }}
+                        </h5>
+                        <br>
+
+                        <h6 class="mb-0">
+                            Departure Date: {{ flight.departure_date }}<br>
+                            Arrival Date: {{ flight.arrival_date }}<br>
+                            Departure Time: {{ flight.departure_time }}<br>
+                            Arrival Time: {{ flight.arrival_time }}<br>
+                            Airline: {{ flight.airline }}<br></h6>
+                        <br>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button class="btn btn-sm btn-primary px-3" style="border-radius: 30px;"
+                                onClick="window.location.href='/Booking/{{flight.flight_id}}'">
+                                Book
+                                Now
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/76f58d0bbc.js" crossorigin="anonymous"></script>
+</body>
+
+
+
+{%endblock%}

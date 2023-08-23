@@ -1,0 +1,35 @@
+
+
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Infinity</h1>
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <i class="bi bi-list" style="color:black; font-weight:bold; font-size:20px;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="{{url_for('auth.add_pack')}}" class="nav-item nav-link">Add packages</a>
+                    <a href="{{url_for('auth.add_hotel')}}" class="nav-item nav-link">Add hotel</a>
+                </div>
+                <a href="{{url_for('auth.admin_logout')}}" class="btn btn-primary rounded-pill py-2 px-4">Logout</a>
+            </div>
+        </nav>
+    </div>
+    <div class="content">
+        {%block content%}
+        {%endblock%}
+    </div>
+
+</body>

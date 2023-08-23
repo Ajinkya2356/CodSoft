@@ -1,0 +1,52 @@
+{%extends "Nav.html"%}{%block title%}Bookings{%endblock%}
+{%block content%}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mybooking.css') }}">
+</head>
+<body>
+<br>
+<br>
+<div class="container">
+  <div class="row g-4 justify-content-center">
+    {%for booking in booked%}
+    <div class="col-lg-4 col-md-10 wow fadeInUp" data-wow-delay="0.1s">
+
+        <div class="package-item">
+
+            <div class="overflow-hidden">
+                
+            </div>
+
+            <div class="d-flex border-bottom">
+                <small class="flex-fill text-center border-end py-2"><i
+                        class="fa fa-map-marker-alt text-primary me-2"></i>{{booking.bookingdate}}</small>
+            
+                <small class="flex-fill text-center py-2"><i
+                        class="fa fa-user text-primary me-2"></i>${{booking.price}}
+                    </small>
+            </div>
+            <div class="text-center p-4">
+                <h3 class="mb-0">{{booking.hname}}</h3>
+                <div class="mb-3">
+                    <small class="bi bi-star-fill" style="color:rgb(241, 199, 7);"></small>
+                    <small class="bi bi-star-fill" style="color:rgb(241, 199, 7);"></small>
+                    <small class="bi bi-star-fill" style="color:rgb(241, 199, 7);"></small>
+                    <small class="bi bi-star-fill" style="color:rgb(241, 199, 7);"></small>
+                    <small class="bi bi-star-fill" style="color:rgb(241, 199, 7);"></small>
+                </div>
+                <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                <div class="d-flex justify-content-center mb-2">
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+</body>
+{%endblock%}

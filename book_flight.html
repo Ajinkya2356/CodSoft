@@ -1,0 +1,26 @@
+{%extends "Nav.html"%}{%block title%}Book_Flights{%endblock%}
+{%block content%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Flight</title>
+</head>
+<body>
+    <h1>Book Flight: {{ flight.origin }} to {{ flight.destination }}</h1>
+    
+    <form method="POST">
+        <label for="passenger_name">Passenger Name:</label>
+        <input type="text" id="passenger_name" name="passenger_name" required><br><br>
+        
+        <label for="passenger_email">Passenger Email:</label>
+        <input type="email" id="passenger_email" name="passenger_email" required><br><br>
+        
+        <label for="no_of_persons">Number of Persons:</label>
+        <input type="number" id="no_of_persons" name="no_of_persons" min="1" required><br><br>
+        
+        <input type="submit" value="Book Now">
+    </form>
+</body>
+</html>
+
+{%endblock%}

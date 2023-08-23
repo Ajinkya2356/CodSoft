@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    
+    height: 100vh;
+    
+   
+}
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap:wrap ;
+    margin-top: 10%;
+}
+
+.ticket {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+
+}
+
+.ticket-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ticket-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.source-destination {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.flight-details {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #777;
+}
