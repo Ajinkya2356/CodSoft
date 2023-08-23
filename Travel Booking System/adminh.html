@@ -1,0 +1,57 @@
+{%extends "admind.html"%}
+{%block content%}
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="booking p-5 mt-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-10 mr-0">
+                    <h1 class="text-white mb-4">Add Hotel</h1>
+                    <form method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control bg-transparent" id="name" name="hname" required
+                                        placeholder="Package Name">
+                                    <label for="name">Hotel Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control bg-transparent" id="name" name="city" required
+                                        placeholder="Package Name">
+                                    <label for="name">City</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control bg-transparent" id="price" name="price" required
+                                        placeholder="Package Price">
+                                    <label for="price">Hotel Price</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control bg-transparent" id="np" name="rating" required
+                                        placeholder="No of Persons">
+                                    <label for="np">Rating</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control bg-transparent" id="url" name="url" required
+                                        placeholder="Image URL">
+                                    <label for="url">URL</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-outline-light w-100 py-3" type="submit">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

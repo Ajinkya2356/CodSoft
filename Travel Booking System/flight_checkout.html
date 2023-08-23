@@ -1,0 +1,98 @@
+{%extends "Nav.html" %}{%block title%}Bookings{%endblock%}
+{%block content%}
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fbooking.css') }}">
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="row1">
+        <div class="col-75">
+            
+            <div class="container1">
+                <form action="/Booking/{{flights.flight_id}}" method="post">
+
+                    <div class="row">
+                        <div class="col-50">
+                            <h3 style="color:white;">Billing Address</h3>
+                            <br>
+                            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" id="email" name="email" placeholder="john@example.com">
+                            
+                           
+
+                            <div class="row1">
+                                <div class="col-50">
+                                    <label for="np"><i class="fa fa-address-card-o"></i> No of Persons</label>
+                                    <input type="number" id="np" name="np" placeholder="">
+                                </div>
+                                <div class="col-50">
+                                    <label for="phone"><i class="fa fa-address-card-o"></i> Phone Number</label>
+                                    <input type="number" id="phone" name="phone" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-50">
+                            <h3 style="color:white;">Payment</h3>
+                            <label for="fname">Accepted Cards</label>
+                            <div class="icon-container">
+                                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                            </div>
+                            <label for="cname">Name on Card</label>
+                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                            <label for="ccnum">Credit card number</label>
+                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                            
+
+                            <div class="row1">
+                                <div class="col-50">
+                                    <label for="expyear">Exp Year</label>
+                                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                </div>
+                                <div class="col-50">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <input type="submit" value="Continue to checkout" class="btn1">
+                </form>
+            </div>
+        </div>
+
+        <div class="col-25">
+            <div class="container1">
+                
+                <h4>Summary
+                    <span class="price" style="color:black">
+                        <i class="fa fa-shopping-cart"></i>
+                        <b>4</b>
+                    </span>
+                </h4>
+                <p><a href="#">{{ flights.source }}{{flights.destination }}</a> <span class="price">$15</span></p>
+                
+                <hr>
+                
+                 
+            </div>
+        </div>
+    </div>
+</body>
+
+{%endblock%}

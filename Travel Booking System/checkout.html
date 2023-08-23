@@ -1,0 +1,75 @@
+{%extends "Nav.html" %}{%block title%}Bookings{%endblock%}
+{%block content%}
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='checkout.css') }}">
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        <div id="container">
+            <div id="left-col">
+                <div id="left-col-cont">
+                    <h2>Summary</h2>
+                    <div class="item">
+                        <div class="img-col">
+                            <img src="{{package.img_url}}" alt="{{package.name}}" height="50px" width="50px" />
+                        </div>
+                        <div class="meta-col">
+                            <h3>{{package.name}}</h3>
+                            <p class="price">${{package.price}}</p>
+                        </div>
+                    </div>
+                    <br>
+                    <p id="total">Total</p>
+                    <h4 id="total-price"><span>$</span> {{package.price}}</h4>
+                </div>
+            </div>
+            <div id="right-col">
+                <h2>Payment</h2>
+                <div id="logotype">
+                    <img id="mastercard" src="http://emilcarlsson.se/assets/MasterCard_Logo.png" alt="" />
+                </div>
+
+                <form method="post">
+                    <label for="">Cardnumber</label>
+                    <div id="cardnumber">
+                        <input type="number" max-length="12" min="12" placeholder="0123" name="cardno" />
+                    </div>
+
+                    <label for="">Cardholder</label>
+                    <input id="cardholder" type="text" placeholder="John Doe" />
+                    <div class="left">
+                        <label for="year">Expiration Date</label>
+                        <select id="year" onchange="" size="1" name="expiry">
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select>
+
+
+                    </div>
+
+                    <div class="right">
+                        <label id="cvc-label" for="">CVC <i class="fa fa-question-circle-o"
+                                aria-hidden="true"></i></label>
+                        <input id="cvc" type="number" placeholder="123" maxlength="3" name="cvv" />
+                    </div>
+                    <button id="purchase">Purchase</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+{%endblock%}

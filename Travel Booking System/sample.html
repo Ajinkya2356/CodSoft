@@ -1,0 +1,28 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Availability Updates</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Flight Availability Updates</h1>
+    <div id="availability"></div>
+    <script>
+        function fetchFlightAvailability() {
+            $.get('/packages', function(data) {
+                console.log(data);
+                var availabilityDiv = document.getElementById('availability');
+                availabilityDiv.innerHTML = JSON.stringify(data, null, 2);
+                
+            });
+        }
+        
+        // Fetch availability initially
+        fetchFlightAvailability();
+        
+        // Poll for updates every 10 seconds
+        setInterval(fetchFlightAvailability, 10000);
+    </script>
+</body>
+</html>
